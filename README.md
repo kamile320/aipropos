@@ -1,4 +1,10 @@
 # aipropos
+
+<a href="https://github.com/kamile320/aipropos/releases">![GitHub Release](https://img.shields.io/github/v/release/kamile320/aipropos)</a>
+<a href="https://github.com/kamile320/aipropos/blob/main/LICENSE">![GitHub License](https://img.shields.io/github/license/kamile320/aipropos)</a>
+<a href="">![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/kamile320/aipropos/total)</a>
+<a href="">![GitHub commits since latest release](https://img.shields.io/github/commits-since/kamile320/aipropos/latest)</a>
+
 Linux simple 'apropos'-like command that uses AI
 
 Search for command after describing it.  
