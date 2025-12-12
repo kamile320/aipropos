@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Building .deb installer
-version="1.1"
+version="1.2"
 maindir=$(pwd)
 cd ~
 dir=$(pwd)
@@ -12,12 +12,12 @@ mkdir -p usr/bin
 mkdir -p usr/share/aipropos
 
 # Main
-cp $maindir/aipropos usr/bin/aipropos
+cp $maindir/build/aipropos usr/bin/aipropos
 cp $maindir/aipropos.py usr/share/aipropos/aipropos.py
 cp $maindir/install.sh usr/share/aipropos/install.sh
 
 # DEBIAN/control
-echo -e "Package: aipropos\nVersion: $version\nArchitecture: all\nMaintainer: Krzysztof M. <kamile320@proton.me>\nDepends: python3 (>=3.9), python3-pip\nSection: python\nInstalled-Size: 24\nHomepage: https://github.com/kamile320/aipropos\nDescription: Linux simple 'apropos'-like command that uses AI. Package builded using build-deb.sh" > DEBIAN/control
+cp $maindir/build/control DEBIAN/control
 
 # Permissions
 cd ..
