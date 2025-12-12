@@ -8,7 +8,7 @@ try:
 except:
     print("Required modules are not installed. Please install them and try again.\nSee aipropos --help for more information.")
 
-ver = "1.1"
+ver = "1.2"
 
 if not os.path.exists(".env"):
     env = open(".env", "w")
@@ -102,7 +102,12 @@ try:
     ai_client = genai.Client(api_key=f"{ai_token}")
     response = ai_client.models.generate_content(
         model=f"{ai_model}", contents=desc, config=types.GenerateContentConfig(
-            system_instruction=[f'You are searching a linux command that meets user description: {desc} and can work on a system with this specifications: {os_release}. Always answer in user language. Answer with a short command description and basic examples. Raw mode - Only plain text; no text formatting.']
+            system_instruction=[f'You are searching a linux command that meets user description: {desc} and can work on a system with this specifications: {os_release}. Always answer in user language. Answer with a short command description and basic examples. Raw mode - Only plain text; no text formatting.'],
+            tools=[
+                    types.Tool(
+                        google_search=types.GoogleSearch()
+                    )
+                ]
         )
     )
     print(response.text)
