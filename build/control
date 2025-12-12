@@ -1,0 +1,9 @@
+Package: aipropos
+Version: 1.2
+Architecture: all
+Maintainer: Krzysztof M. <kamile320@proton.me>
+Depends: python3 (>=3.9), python3-pip
+Section: python
+Installed-Size: 88
+Homepage: https://github.com/kamile320/aipropos
+Description: Linux simple 'apropos'-like command that uses AI.
